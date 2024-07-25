@@ -1,0 +1,130 @@
+---
+import Image from "astro/components/Image.astro";
+import Badge from "./badge.astro";
+import GuanacoRental from "../images/guanaco-rental.png";
+import FeigLogistica from "../images/feig-logistica.png";
+import AlalaCampo from "../images/alala-campo.png";
+import { Icon } from "astro-icon/components";
+import Section from "./section/section.astro";
+import SectionTitle from "./section/section-title.astro";
+import Link from "./link.astro";
+---
+
+<Section>
+  <SectionTitle>FREELANCE</SectionTitle>
+
+  <!-- GUANACO RENTAL -->
+  <div class="pt-[20rem] flex flex-col items-center">
+    <div
+      class="parallax-container relative h-[800px] w-[90%] bg-[rgba(30,30,30,0.5)] rounded-[24px]"
+    >
+      <div
+        class="parallax-image absolute z-10 top-[-20%] left-1/2 -translate-x-1/2 w-[90%] h-[500px] rounded-[100px]"
+      >
+        <Image
+          src={GuanacoRental}
+          alt="Guanaco Rental freelance work"
+          width="800"
+          height="800"
+          class="w-full h-full object-cover object-top origin-center rounded-[24px]"
+        />
+      </div>
+
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-20">
+        <div class="flex justify-between items-center">
+          <p class="font-title text-[3rem] font-semibold reveal-text">
+            Guanaco Rental
+          </p>
+
+          <Link href="https://www.guanacorental.shop/">
+            <Icon name="external-link" class="size-10 text-white" />
+          </Link>
+        </div>
+
+        <p class="text-[2rem]">Rental App</p>
+        <div class="flex gap-4 items-center text-[2rem] flex-wrap pt-14">
+          <Badge class="text-opacity-white">Nextjs</Badge>
+          <Badge class="text-opacity-white">Shadcn/ui</Badge>
+          <Badge class="text-opacity-white">Tailwind</Badge>
+          <Badge class="text-opacity-white">tRPC</Badge>
+          <Badge class="text-opacity-white">Prisma</Badge>
+          <Badge class="text-opacity-white">PostgresSQL</Badge>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FEIG LOGISTICA -->
+  <div class="pt-[20rem] flex flex-col items-center">
+    <div
+      class="parallax-container relative h-[750px] w-[90%] bg-[rgba(30,30,30,0.5)] rounded-[24px]"
+    >
+      <div
+        class="parallax-image absolute z-10 top-[-20%] left-1/2 -translate-x-1/2 w-[90%] h-[500px] rounded-[100px]"
+      >
+        <Image
+          src={FeigLogistica}
+          alt="Guanaco Rental freelance work"
+          width="800"
+          height="800"
+          class="w-full h-full object-cover object-top origin-center rounded-[24px]"
+        />
+      </div>
+
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-20">
+        <div class="flex justify-between items-center">
+          <p class="font-title text-[3rem] font-semibold reveal-text">
+            FEIG Grupo Logistico
+          </p>
+
+          <Link href="https://www.feiglogistica.com.ar/">
+            <Icon name="external-link" class="size-10 text-white" />
+          </Link>
+        </div>
+
+        <p class="text-[2rem]">Landing Page</p>
+        <div class="flex gap-4 items-center text-[2rem] flex-wrap pt-14">
+          <Badge class="text-opacity-white">Astro.js</Badge>
+          <Badge class="text-opacity-white">React</Badge>
+          <Badge class="text-opacity-white">Tailwind</Badge>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ALALA CAMPO -->
+  <div class="pt-[20rem] flex flex-col items-center">
+    <div
+      class="parallax-container relative h-[750px] w-[90%] bg-[rgba(30,30,30,0.5)] rounded-[24px]"
+    >
+      <div
+        class="parallax-image absolute z-10 top-[-20%] left-1/2 -translate-x-1/2 w-[90%] h-[500px] rounded-[100px]"
+      >
+        <Image
+          src={AlalaCampo}
+          alt="Guanaco Rental freelance work"
+          width="800"
+          height="800"
+          class="w-full h-full object-cover object-top origin-center rounded-[24px]"
+        />
+      </div>
+
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-20">
+        <div class="flex justify-between items-center">
+          <p class="font-title text-[3rem] font-semibold reveal-text">
+            Alala Campo
+          </p>
+
+          <Link href="https://www.alalacampo.com/">
+            <Icon name="external-link" class="size-10 text-white" />
+          </Link>
+        </div>
+
+        <p class="text-[2rem]">Landing Page</p>
+        <div class="flex gap-4 items-center text-[2rem] flex-wrap pt-14">
+          <Badge class="text-opacity-white">Astro.js</Badge>
+          <Badge class="text-opacity-white">React</Badge>
+          <Badge class="text-opacity-white">Tailwind</Badge>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

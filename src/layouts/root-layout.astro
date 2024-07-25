@@ -1,0 +1,56 @@
+---
+import "../styles/global.css";
+import "@fontsource/open-sans";
+import "@fontsource/inter";
+// import SeoHead from '../components/SeoHead.astro';
+---
+
+<html lang="es">
+  <!-- <SeoHead /> -->
+
+  <body class="bg-[rgb(15,15,15)] text-white">
+    <!-- <div class="relative min-h-screen overflow-hidden bg-[rgb(15,15,15)]">
+      <div class="absolute inset-0 opacity-30">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noiseFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.05"
+              numOctaves="3"
+              stitchTiles="stitch"
+            >
+              <animate
+                attributeName="seed"
+                from="0"
+                to="100"
+                dur="18s"
+                repeatCount="indefinite"></animate>
+            </feTurbulence>
+            <feColorMatrix type="saturate" values="0"></feColorMatrix>
+            <feComponentTransfer>
+              <feFuncR type="linear" slope="2" intercept="-0.5"></feFuncR>
+              <feFuncG type="linear" slope="2" intercept="-0.5"></feFuncG>
+              <feFuncB type="linear" slope="2" intercept="-0.5"></feFuncB>
+            </feComponentTransfer>
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noiseFilter)"></rect>
+        </svg>
+      </div>
+      <div class="absolute inset-0 bg-[rgb(15,15,15)] opacity-90"></div>
+      <div class="relative z-10"><slot /></div>
+    </div> -->
+    <slot />
+
+    <script>
+      import { animateIntro } from "../gsap/intro";
+      import { animateFreelance } from "../gsap/freelance";
+      import { animateContact } from "../gsap/contact";
+      import { animateExperience } from "../gsap/experience";
+
+      animateIntro();
+      animateFreelance();
+      animateContact();
+      animateExperience();
+    </script>
+  </body>
+</html>

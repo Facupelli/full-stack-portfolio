@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const defaultClass = "cursor-pointer";
+---
+
+<button data-copy-to-clipboard-button class:list={[defaultClass, className]}>
+  <slot />
+</button>
+
+<script>
+  import { copyToClipboard } from "../../utils/copy-to-clipboard";
+
+  const buttons = document.querySelectorAll("[data-copy-to-clipboard-button]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () =>
+      copyToClipboard("facundopellicer4@gmail.com")
+    );
+  });
+</script>

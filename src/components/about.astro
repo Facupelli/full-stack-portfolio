@@ -1,0 +1,147 @@
+---
+import { Icon } from "astro-icon/components";
+import Section from "./section/section.astro";
+import SectionTitle from "./section/section-title.astro";
+import AbsoluteBg from "./bg/absolute-bg.astro";
+import Image from "astro/components/Image.astro";
+import YoutubeLogo from "../images/social-logos/youtube-logo.png";
+import SpotifyLogo from "../images/social-logos/spotify-logo.png";
+import VscodeLogo from "../images/social-logos/vscode-logo.png";
+import FigmaLogo from "../images/social-logos/figma-logo.png";
+import PostmanLogo from "../images/social-logos/postman-logo.png";
+import ChromeLogo from "../images/social-logos/chrome-logo.png";
+import CopyToClipboardButton from "./buttons/copy-to-clipboard-button.astro";
+import Link from "./link.astro";
+---
+
+<Section>
+  <SectionTitle>ABOUT</SectionTitle>
+
+  <div class="pt-[5rem] grid gap-16">
+    <div class="rounded-[36px] p-12 border border-border-white">
+      <AbsoluteBg />
+      <div class="text-[2.2rem] grid gap-8">
+        <p>
+          Nice to meet you! I'm Facundo, a <span class="text-[rgb(109,167,255)]"
+            >Full Stack Developer</span
+          > with 1.5 year of experience at startups. I'm passionate about the whole
+          process of making software.
+        </p>
+        <p>
+          <span class="text-[rgb(148,255,109)]">Frontend</span>? <span
+            class="text-[rgb(197,109,255)]">Backend</span
+          >? No problem. I love investigate, design and develop new things.
+        </p>
+        <p>I'm based in San Juan, Argentina.</p>
+      </div>
+
+      <div class="pt-[5rem] flex items-center justify-between">
+        <div class="flex items-center gap-8">
+          <CopyToClipboardButton>
+            <Icon name="email" class="size-14 text-white" />
+          </CopyToClipboardButton>
+          <Link href="https://www.linkedin.com/in/facundopellicer/">
+            <Icon name="linkedin" class="size-14 text-white" />
+          </Link>
+          <Link href="https://github.com/Facupelli">
+            <Icon name="github" class="size-14 text-white" />
+          </Link>
+        </div>
+        <a
+          href="/facundo-pellicer-full-stack-developer-resume.pdf"
+          download
+          class="cursor-pointer flex items-end gap-4 text-[2.2rem] leading-none"
+        >
+          <Icon name="download" class="size-14 text-white" />
+          Resume
+        </a>
+      </div>
+    </div>
+
+    <div class="rounded-[36px] p-12 border border-border-white">
+      <AbsoluteBg />
+
+      <div class="text-[2.5rem] font-medium">TOOLS I USE EVERYDAY</div>
+
+      <div class="grid gap-10 pt-16 text-[2rem]">
+        <div class="flex gap-6 items-center">
+          <div class="size-[75px]">
+            <Image
+              src={SpotifyLogo}
+              alt="youtube logo"
+              width={75}
+              height={75}
+              class="object-contain w-full h-full"
+            />
+          </div> Music is life
+        </div>
+
+        <div class="flex gap-6 items-center">
+          <span class="text-[4rem] block h-[75px] w-[75px] pl-6 pr-6">X</span> Stay
+          updated with the latest news
+        </div>
+
+        <div class="flex gap-6 items-center">
+          <div class="size-[75px]">
+            <Image
+              src={YoutubeLogo}
+              alt="youtube logo"
+              width={75}
+              height={75}
+              class="object-contain w-full h-full"
+            />
+          </div>
+          Learn things and keep up with the news
+        </div>
+
+        <div class="flex gap-6 items-center">
+          <div class="size-[75px]">
+            <Image
+              src={VscodeLogo}
+              alt="youtube logo"
+              width={75}
+              height={75}
+              class="object-contain w-full h-full"
+            />
+          </div> I love coding
+        </div>
+
+        <div class="flex gap-6 items-center">
+          <div class="size-[75px]">
+            <Image
+              src={FigmaLogo}
+              alt="youtube logo"
+              width={75}
+              height={75}
+              class="object-contain w-full h-full"
+            />
+          </div> For design
+        </div>
+
+        <div class="flex gap-6 items-center">
+          <div class="size-[75px]">
+            <Image
+              src={PostmanLogo}
+              alt="youtube logo"
+              width={75}
+              height={75}
+              class="object-contain w-full h-full"
+            />
+          </div> Testing API requests
+        </div>
+
+        <div class="flex gap-6 items-center">
+          <div class="size-[75px]">
+            <Image
+              src={ChromeLogo}
+              alt="youtube logo"
+              width={75}
+              height={75}
+              class="object-contain w-full h-full"
+            />
+          </div> or Arc for smooth browsing
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

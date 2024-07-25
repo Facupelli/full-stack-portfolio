@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const defaultClass = "min-h-fit py-[14rem] px-10";
+---
+
+<section class:list={[defaultClass, className]}>
+  <slot />
+</section>

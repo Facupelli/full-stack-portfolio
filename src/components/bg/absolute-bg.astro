@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const defaultClass =
+  "absolute top-0 left-0 w-full h-full bg-[rgb(255,255,255)] opacity-[2%]";
+---
+
+<div class:list={[defaultClass, className]}></div>
