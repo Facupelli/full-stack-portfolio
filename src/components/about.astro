@@ -181,15 +181,15 @@ const creators = [
             creators.map((creator) => (
               <div class="flex justify-between">
                 <div class="grid gap-1">
-                  <p>{creator.name}</p>
-                  <p class="text-[.8rem] text-opacity-white">
+                  <p class="text-[1.6rem] lg:text-base">{creator.name}</p>
+                  <p class="text-[1.2rem] lg:text-[.8rem] text-opacity-white">
                     {creator.platform.join(" - ")}
                   </p>
                 </div>
                 <Link href={creator.link}>
                   <Icon
                     name="external-link"
-                    class="size-10 lg:size-5 text-opacity-white"
+                    class="size-8 lg:size-5 text-opacity-white"
                   />
                 </Link>
               </div>

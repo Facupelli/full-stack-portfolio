@@ -1,8 +1,5 @@
 import gsap from "gsap";
 
-let currentX = 0;
-let currentY = 0;
-
 export function animateNoise() {
   gsap.to(".noise", {
     duration: 20, // Duración de la animación en segundos
