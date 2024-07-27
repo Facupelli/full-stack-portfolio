@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon/components";
 import Section from "./section/section.astro";
 import SectionTitle from "./section/section-title.astro";
-import AbsoluteBg from "./bg/absolute-bg.astro";
 import Image from "astro/components/Image.astro";
 import YoutubeLogo from "../images/social-logos/youtube-logo.png";
 import SpotifyLogo from "../images/social-logos/spotify-logo.png";
@@ -12,15 +11,38 @@ import PostmanLogo from "../images/social-logos/postman-logo.png";
 import ChromeLogo from "../images/social-logos/chrome-logo.png";
 import CopyToClipboardButton from "./buttons/copy-to-clipboard-button.astro";
 import Link from "./link.astro";
+import Card from "./card.astro";
+import PersonalPicture from "../images/personal-picture.jpg";
+
+const creators = [
+  {
+    name: "Theo",
+    platform: ["Twitch", "Youtube"],
+    link: "https://www.twitch.tv/theo",
+  },
+  {
+    name: "The Primeagean",
+    platform: ["Twitch", "Youtube"],
+    link: "https://www.twitch.tv/theprimeagen",
+  },
+  {
+    name: "Goncy",
+    platform: ["Twitch", "Youtube"],
+    link: "https://www.twitch.tv/goncypozzo",
+  },
+];
 ---
 
 <Section>
   <SectionTitle>ABOUT</SectionTitle>
 
-  <div class="pt-[5rem] grid gap-16">
-    <div class="rounded-[36px] p-12 border border-border-white">
-      <AbsoluteBg />
-      <div class="text-[2.2rem] grid gap-8">
+  <div
+    class="pt-[5rem] grid gap-16 lg:gap-8 lg:grid-cols-[60%_40%] lg:grid-rows-[auto_auto]"
+  >
+    <Card
+      class="lg:h-fit lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2"
+    >
+      <div class="text-[2.2rem] lg:text-[1.2rem] grid gap-8">
         <p>
           Nice to meet you! I'm Facundo, a <span class="text-[rgb(109,167,255)]"
             >Full Stack Developer</span
@@ -35,37 +57,37 @@ import Link from "./link.astro";
         <p>I'm based in San Juan, Argentina.</p>
       </div>
 
-      <div class="pt-[5rem] flex items-center justify-between">
-        <div class="flex items-center gap-8">
+      <div class="pt-[4rem] flex items-center justify-between">
+        <div class="flex items-center gap-8 lg:gap-4">
           <CopyToClipboardButton>
-            <Icon name="email" class="size-14 text-white" />
+            <Icon name="email" class="size-14 lg:size-7 text-white" />
           </CopyToClipboardButton>
           <Link href="https://www.linkedin.com/in/facundopellicer/">
-            <Icon name="linkedin" class="size-14 text-white" />
+            <Icon name="linkedin" class="size-14 lg:size-7 text-white" />
           </Link>
           <Link href="https://github.com/Facupelli">
-            <Icon name="github" class="size-14 text-white" />
+            <Icon name="github" class="size-14 lg:size-7 text-white" />
           </Link>
         </div>
         <a
           href="/facundo-pellicer-full-stack-developer-resume.pdf"
           download
-          class="cursor-pointer flex items-end gap-4 text-[2.2rem] leading-none"
+          class="cursor-pointer flex items-end gap-4 lg:gap-2 text-[2.2rem] lg:text-[1rem] leading-none"
         >
-          <Icon name="download" class="size-14 text-white" />
+          <Icon name="download" class="size-14 lg:size-7 text-white" />
           Resume
         </a>
       </div>
-    </div>
+    </Card>
 
-    <div class="rounded-[36px] p-12 border border-border-white">
-      <AbsoluteBg />
+    <Card class="lg:col-start-2 h-fit lg:col-end-3 lg:row-start-1 lg:row-end-3">
+      <p class="text-[2.5rem] lg:text-[1.1rem] font-medium">
+        TOOLS I USE EVERYDAY
+      </p>
 
-      <div class="text-[2.5rem] font-medium">TOOLS I USE EVERYDAY</div>
-
-      <div class="grid gap-10 pt-16 text-[2rem]">
+      <div class="grid gap-10 pt-16 lg:pt-12 text-[2rem] lg:text-[1rem]">
         <div class="flex gap-6 items-center">
-          <div class="size-[75px]">
+          <div class="size-[75px] lg:size-[40px]">
             <Image
               src={SpotifyLogo}
               alt="youtube logo"
@@ -77,12 +99,14 @@ import Link from "./link.astro";
         </div>
 
         <div class="flex gap-6 items-center">
-          <span class="text-[4rem] block h-[75px] w-[75px] pl-6 pr-6">X</span> Stay
-          updated with the latest news
+          <span
+            class="text-[4rem] lg:text-[2rem] block size-[75px] lg:size-[40px] px-6"
+            >X</span
+          > Stay updated with the latest news
         </div>
 
         <div class="flex gap-6 items-center">
-          <div class="size-[75px]">
+          <div class="size-[75px] lg:size-[40px]">
             <Image
               src={YoutubeLogo}
               alt="youtube logo"
@@ -95,7 +119,7 @@ import Link from "./link.astro";
         </div>
 
         <div class="flex gap-6 items-center">
-          <div class="size-[75px]">
+          <div class="size-[75px] lg:size-[40px]">
             <Image
               src={VscodeLogo}
               alt="youtube logo"
@@ -107,7 +131,7 @@ import Link from "./link.astro";
         </div>
 
         <div class="flex gap-6 items-center">
-          <div class="size-[75px]">
+          <div class="size-[75px] lg:size-[40px]">
             <Image
               src={FigmaLogo}
               alt="youtube logo"
@@ -119,7 +143,7 @@ import Link from "./link.astro";
         </div>
 
         <div class="flex gap-6 items-center">
-          <div class="size-[75px]">
+          <div class="size-[75px] lg:size-[40px]">
             <Image
               src={PostmanLogo}
               alt="youtube logo"
@@ -131,7 +155,7 @@ import Link from "./link.astro";
         </div>
 
         <div class="flex gap-6 items-center">
-          <div class="size-[75px]">
+          <div class="size-[75px] lg:size-[40px]">
             <Image
               src={ChromeLogo}
               alt="youtube logo"
@@ -142,6 +166,49 @@ import Link from "./link.astro";
           </div> or Arc for smooth browsing
         </div>
       </div>
+    </Card>
+
+    <div
+      class="grid lg:grid-cols-2 gap-16 lg:gap-8 lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3"
+    >
+      <Card class="h-fit">
+        <p class="text-[2.5rem] lg:text-[1.1rem] font-medium">
+          CONTENT CREATORS I ADMIRE
+        </p>
+
+        <div class="pt-10 grid gap-8">
+          {
+            creators.map((creator) => (
+              <div class="flex justify-between">
+                <div class="grid gap-1">
+                  <p>{creator.name}</p>
+                  <p class="text-[.8rem] text-opacity-white">
+                    {creator.platform.join(" - ")}
+                  </p>
+                </div>
+                <Link href={creator.link}>
+                  <Icon
+                    name="external-link"
+                    class="size-10 lg:size-5 text-opacity-white"
+                  />
+                </Link>
+              </div>
+            ))
+          }
+        </div>
+      </Card>
+
+      <Card class="w-2/3 lg:w-full">
+        <div class="h-[600px] lg:h-[350px]">
+          <Image
+            src={PersonalPicture}
+            width={400}
+            height={300}
+            alt="facundo pellicer picture"
+            class="h-full w-full object-cover object-center grayscale contrast-125 opacity-60 rounded-md"
+          />
+        </div>
+      </Card>
     </div>
   </div>
 </Section>

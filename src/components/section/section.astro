@@ -5,7 +5,7 @@ interface Props {
 
 const { class: className } = Astro.props;
 
-const defaultClass = "min-h-fit py-[14rem] px-10";
+const defaultClass = "min-h-fit py-[14rem] px-10 lg:px-20 max-w-7xl mx-auto";
 ---
 
 <section class:list={[defaultClass, className]}>

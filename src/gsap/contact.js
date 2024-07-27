@@ -5,11 +5,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function animateContact() {
   const revealTexts = document.querySelectorAll(".reveal-text-fast");
+  const revealTextContainer = document.querySelector(".reveal-text-container");
+
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: revealTextContainer,
+      start: "top 80%",
+      end: "top 70%",
+      // markers: true,
+    },
+  });
 
   revealTexts.forEach((revealText) => {
     const letters = revealText.textContent.split("").map((letter) => {
       const span = document.createElement("span");
-      span.textContent = letter === " " ? "\u00A0" : letter; // Usar un espacio no separable
+      span.textContent = letter === " " ? "\u00A0" : letter;
       span.style.display = "inline-block";
       span.style.opacity = 0;
       return span;
@@ -18,18 +28,15 @@ export function animateContact() {
     revealText.innerHTML = "";
     letters.forEach((span) => revealText.appendChild(span));
 
-    gsap.to(letters, {
-      opacity: 1,
-      duration: 0.3,
-      ease: "power1.inOut",
-      stagger: 0.025,
-      scrollTrigger: {
-        trigger: revealText,
-        start: "top 80%",
-        end: "top 70%",
-        onEnter: () => gsap.to(letters, { opacity: 1, stagger: 0.1 }),
-        // markers: true,
+    timeline.to(
+      letters,
+      {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power1.inOut",
+        stagger: 0.025,
       },
-    });
+      "-=0.2"
+    );
   });
 }

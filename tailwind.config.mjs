@@ -12,8 +12,8 @@ export default {
       },
       colors: {
         white: "rgb(225,225,225)",
-        "opacity-white": "rgba(225,225,225,0.5)",
-        "border-white": "rgba(225,225,225,0.2)",
+        "opacity-white": "rgba(225,225,225,0.8)",
+        "border-white": "rgba(225,225,225,0.1)",
       },
       backgroundImage: {
         "highlight-border":

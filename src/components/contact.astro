@@ -8,26 +8,39 @@ import CopyToClipboardButton from "./buttons/copy-to-clipboard-button.astro";
 <Section>
   <div class="flex flex-col items-center justify-center">
     <div>
-      <h1
-        class="text-[2.2rem] text-balance leading-2 text-center font-title reveal-text-fast"
-      >
-        Now that you know a bit about me, what about you? Let's stay in touch!
-      </h1>
-      <div class="flex items-center justify-center gap-8 pt-10">
+      <div class="grid reveal-text-container">
+        <p
+          class="text-[2.2rem] lg:text-[1.6rem] text-balance leading-2 text-center font-title reveal-text-fast"
+        >
+          Now that you know a bit about me,
+        </p>
+        <p
+          class="text-[2.2rem] lg:text-[1.6rem] text-balance leading-2 text-center font-title reveal-text-fast"
+        >
+          what about you? Let's stay in touch!
+        </p>
+      </div>
+
+      <div class="flex items-center justify-center gap-8 lg:gap-4 pt-10">
         <CopyToClipboardButton class="animate-float">
-          <Icon name="email" class="size-12 text-white" />
+          <Icon name="email" class="size-12 lg:size-8 text-white" />
         </CopyToClipboardButton>
         <Link
           href="https://www.linkedin.com/in/facundopellicer/"
           class="animate-float"
         >
-          <Icon name="linkedin" class="size-12 text-white" />
+          <Icon name="linkedin" class="size-12 lg:size-8 text-white" />
         </Link>
       </div>
     </div>
-    <div class="text-[1.5rem] pt-[20rem] flex items-center gap-2">
-      Created with love <Icon name="heart" class="size-10 text-red-800" />
+    <div
+      class="text-[1.5rem] lg:text-[1rem] pt-[20rem] flex items-center gap-2"
+    >
+      Created with love <Icon
+        name="heart"
+        class="size-10 lg:size-6 text-red-800"
+      />
     </div>
-    <p class="text-opacity-white">MADE IN ASTRO</p>
+    <p class="text-opacity-white lg:text-[.6rem]">MADE IN ASTRO</p>
   </div>
 </Section>

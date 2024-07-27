@@ -8,123 +8,83 @@ import { Icon } from "astro-icon/components";
 import Section from "./section/section.astro";
 import SectionTitle from "./section/section-title.astro";
 import Link from "./link.astro";
+
+const works = [
+  {
+    name: "Guanaco Rental",
+    type: "Rental App",
+    url: "https://www.guanacorental.shop/",
+    image: GuanacoRental,
+    stack: ["Nextjs", "Shadcn/ui", "Tailwind", "tRPC", "Prisma", "PostgresSQL"],
+  },
+  {
+    name: "FEIG Grupo Logistico",
+    type: "Landing Page",
+    url: "https://www.feiglogistica.com.ar/",
+    image: FeigLogistica,
+    stack: ["Astro.js", "React", "Tailwind"],
+  },
+  {
+    name: "Alala Campo",
+    type: "Landing Page",
+    url: "https://www.alalacampo.com/",
+    image: AlalaCampo,
+    stack: ["Astro.js", "React", "Tailwind"],
+  },
+];
 ---
 
 <Section>
   <SectionTitle>FREELANCE</SectionTitle>
 
-  <!-- GUANACO RENTAL -->
-  <div class="pt-[20rem] flex flex-col items-center">
-    <div
-      class="parallax-container relative h-[800px] w-[90%] bg-[rgba(30,30,30,0.5)] rounded-[24px]"
-    >
-      <div
-        class="parallax-image absolute z-10 top-[-20%] left-1/2 -translate-x-1/2 w-[90%] h-[500px] rounded-[100px]"
-      >
-        <Image
-          src={GuanacoRental}
-          alt="Guanaco Rental freelance work"
-          width="800"
-          height="800"
-          class="w-full h-full object-cover object-top origin-center rounded-[24px]"
-        />
-      </div>
+  <div class="grid gap-20">
+    {
+      works.map((work) => (
+        <article class="grid gap-4 p-8 rounded-lg">
+          <div class="absolute w-full h-[75%] bottom-0 left-0 rounded-lg bg-[rgb(255,255,255)] opacity-[2%]" />
+          <div class="absolute w-full h-[75%] bottom-0 left-0 border border-border-white rounded-lg " />
 
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-20">
-        <div class="flex justify-between items-center">
-          <p class="font-title text-[3rem] font-semibold reveal-text">
-            Guanaco Rental
-          </p>
+          <div class="w-full lg:pr-10">
+            <div class="lg:w-[500px] w-[90%] mx-auto lg:mx-0 h-[400px] lg:h-[300px] lg:ml-auto ">
+              <Image
+                src={work.image}
+                alt="Alala Campo freelance work"
+                width="800"
+                height="800"
+                class="w-full h-full object-cover object-top origin-center rounded-md lg:-rotate-2 hover:scale-105 hover:rotate-0 ease-in-out duration-300"
+              />
+            </div>
+          </div>
 
-          <Link href="https://www.guanacorental.shop/">
-            <Icon name="external-link" class="size-10 text-white" />
-          </Link>
-        </div>
+          <div class="pt-14 lg:pt-0">
+            <div class="flex items-end gap-2">
+              <p class="font-title text-[3rem] lg:text-[2rem] font-semibold reveal-text leading-none">
+                {work.name}
+              </p>
+              <Link href={work.url}>
+                <Icon
+                  name="external-link"
+                  class="size-10 lg:size-5 text-white"
+                />
+              </Link>
+            </div>
 
-        <p class="text-[2rem]">Rental App</p>
-        <div class="flex gap-4 items-center text-[2rem] flex-wrap pt-14">
-          <Badge class="text-opacity-white">Nextjs</Badge>
-          <Badge class="text-opacity-white">Shadcn/ui</Badge>
-          <Badge class="text-opacity-white">Tailwind</Badge>
-          <Badge class="text-opacity-white">tRPC</Badge>
-          <Badge class="text-opacity-white">Prisma</Badge>
-          <Badge class="text-opacity-white">PostgresSQL</Badge>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- FEIG LOGISTICA -->
-  <div class="pt-[20rem] flex flex-col items-center">
-    <div
-      class="parallax-container relative h-[750px] w-[90%] bg-[rgba(30,30,30,0.5)] rounded-[24px]"
-    >
-      <div
-        class="parallax-image absolute z-10 top-[-20%] left-1/2 -translate-x-1/2 w-[90%] h-[500px] rounded-[100px]"
-      >
-        <Image
-          src={FeigLogistica}
-          alt="Guanaco Rental freelance work"
-          width="800"
-          height="800"
-          class="w-full h-full object-cover object-top origin-center rounded-[24px]"
-        />
-      </div>
+            <div class="grid lg:flex lg:justify-between lg:items-baseline pt-2">
+              <div class="flex gap-4 items-center text-[2rem] lg:text-[1rem] flex-wrap pt-14 lg:pt-4">
+                {work.stack.map((stack) => (
+                  <Badge class="text-opacity-white">{stack}</Badge>
+                ))}
+              </div>
 
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-20">
-        <div class="flex justify-between items-center">
-          <p class="font-title text-[3rem] font-semibold reveal-text">
-            FEIG Grupo Logistico
-          </p>
-
-          <Link href="https://www.feiglogistica.com.ar/">
-            <Icon name="external-link" class="size-10 text-white" />
-          </Link>
-        </div>
-
-        <p class="text-[2rem]">Landing Page</p>
-        <div class="flex gap-4 items-center text-[2rem] flex-wrap pt-14">
-          <Badge class="text-opacity-white">Astro.js</Badge>
-          <Badge class="text-opacity-white">React</Badge>
-          <Badge class="text-opacity-white">Tailwind</Badge>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ALALA CAMPO -->
-  <div class="pt-[20rem] flex flex-col items-center">
-    <div
-      class="parallax-container relative h-[750px] w-[90%] bg-[rgba(30,30,30,0.5)] rounded-[24px]"
-    >
-      <div
-        class="parallax-image absolute z-10 top-[-20%] left-1/2 -translate-x-1/2 w-[90%] h-[500px] rounded-[100px]"
-      >
-        <Image
-          src={AlalaCampo}
-          alt="Guanaco Rental freelance work"
-          width="800"
-          height="800"
-          class="w-full h-full object-cover object-top origin-center rounded-[24px]"
-        />
-      </div>
-
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-20">
-        <div class="flex justify-between items-center">
-          <p class="font-title text-[3rem] font-semibold reveal-text">
-            Alala Campo
-          </p>
-
-          <Link href="https://www.alalacampo.com/">
-            <Icon name="external-link" class="size-10 text-white" />
-          </Link>
-        </div>
-
-        <p class="text-[2rem]">Landing Page</p>
-        <div class="flex gap-4 items-center text-[2rem] flex-wrap pt-14">
-          <Badge class="text-opacity-white">Astro.js</Badge>
-          <Badge class="text-opacity-white">React</Badge>
-          <Badge class="text-opacity-white">Tailwind</Badge>
-        </div>
-      </div>
-    </div>
+              <div class="flex justify-end">
+                <p class="text-[1.6rem] text-opacity-white lg:text-white lg:text-[1rem]">
+                  {work.type}
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))
+    }
   </div>
 </Section>

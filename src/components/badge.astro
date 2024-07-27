@@ -1,14 +1,15 @@
 ---
 interface Props {
   class?: string;
+  color?: string;
 }
 
-const { class: className } = Astro.props;
+const { class: className, color } = Astro.props;
 
 const defaultClass =
-  "py-4 px-6 border border-[rgba(255,255,255,0.3)] rounded-[32px] leading-none";
+  "py-4 px-6 lg:py-2 lg:px-4 border border-[rgba(255,255,255,0.3)] rounded-[32px] leading-none";
 ---
 
-<div class:list={[defaultClass, className]}>
+<div class:list={[defaultClass, className, color]}>
   <slot />
 </div>

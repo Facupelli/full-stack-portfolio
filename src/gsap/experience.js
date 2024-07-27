@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function animateExperience() {
+export function animateHighlightBorder() {
   const border = document.querySelector(".highlight-border");
 
   gsap.set(border, { backgroundPosition: "100% 0" });

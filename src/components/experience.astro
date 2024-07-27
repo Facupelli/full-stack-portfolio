@@ -5,6 +5,25 @@ import SectionTitle from "./section/section-title.astro";
 import AbsoluteBg from "./bg/absolute-bg.astro";
 import Link from "./link.astro";
 import { Icon } from "astro-icon/components";
+import Card from "./card.astro";
+
+const experiences = [
+  {
+    time: "2023 - Present",
+    title: "Full Stack Developer",
+    company: "Fidooo Engineering",
+  },
+  {
+    time: "2023 - 2023 (6 months)",
+    title: "WordPress Developer",
+    company: "Eventys",
+  },
+  {
+    time: "2022 - 2023",
+    title: "Full Stack Developer",
+    company: "Freelance",
+  },
+];
 
 const courses = [
   {
@@ -33,67 +52,92 @@ const courses = [
     link: "https://frontendmasters.com/courses/react-performance/introduction/",
   },
 ];
+
+const currentTechs = [
+  { name: "Typescript", color: "border-blue-400" },
+  { name: "Next.js", color: "" },
+  { name: "Nest.js", color: "border-red-400" },
+  { name: "Firebase", color: "border-yellow-400" },
+  { name: "Google Cloud", color: "border-green-400" },
+  { name: "Git", color: "border-red-400" },
+  { name: "Github", color: "" },
+  { name: "Docker", color: "border-blue-400" },
+  { name: "Astro", color: "border-purple-400" },
+];
+
+const triedTechs = [
+  { name: "Remix", color: "" },
+  { name: "Vue", color: "border-green-400" },
+  { name: "Go", color: "border-sky-400" },
+  { name: "Adonis", color: "border-purple-400" },
+  { name: "Nuxt", color: "border-green-400" },
+  { name: "HTMX", color: "border-blue-400" },
+  { name: "Pyton", color: "border-yellow-400" },
+  { name: "Django", color: "border-green-400" },
+  { name: "Flask", color: "border-red-400" },
+  { name: "Elixir", color: "border-purple-400" },
+  { name: "Phoenix", color: "border-rose-400" },
+
+];
 ---
 
 <Section class="pt-[28rem]">
   <SectionTitle>EXPERIENCE</SectionTitle>
 
-  <div
-    class="p-10 rounded-[24px] mt-[5rem] border border-[rgba(255,255,255,0.2)]"
-  >
-    <AbsoluteBg class="rounded-[24px]" />
+  <div class="flex flex-col lg:grid lg:grid-cols-[60%_40%] lg:gap-x-10">
+    <Card class="mt-[5rem]">
+        <div class="grid grid-cols-2 gap-y-24">
+          {experiences.map((experience) => (
+            <p class="text-opacity-white text-[1.5rem] lg:text-[1.1rem]">
+              {experience.time}
+            </p>
+            <div class="flex flex-col justify-start items-start">
+              <p class="font-medium text-[2rem] lg:text-[1.4rem]">
+                {experience.title}
+              </p>
+              <p class="text-opacity-white text-[1.8rem] lg:text-[1rem]">
+                {experience.company}
+              </p>
+            </div>
 
-    <div class="grid grid-cols-2 gap-y-24">
-      <p class="text-opacity-white text-[1.5rem]">2023 - Present</p>
-      <div class="flex flex-col justify-start items-start">
-        <p class="font-medium text-[2rem]">Full Stack Developer</p>
-        <p class="text-opacity-white text-[1.8rem]">Fidooo Engineering</p>
-      </div>
+          ))}
+        </div>
+    </Card>
 
-      <p class="text-opacity-white text-[1.5rem]">2023 - 2023 (6 months)</p>
-      <div class="flex flex-col justify-start items-start">
-        <p class="font-medium text-[2rem]">WordPress Developer</p>
-        <p class="text-opacity-white text-[1.8rem]">Eventys</p>
-      </div>
-
-      <p class="text-opacity-white text-[1.5rem]">2022 - 2023</p>
-      <div class="flex flex-col justify-start items-start">
-        <p class="font-medium text-[2rem]">Full Stack Developer</p>
-        <p class="text-opacity-white text-[1.8rem]">Freelance</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="relative pt-[8rem]">
-    <div class="grid gap-10">
-      <div class="leading-none text-[1.5rem] font-title font-medium">
-        I'm currently working with
-      </div>
-      <div class="flex flex-wrap gap-4">
-        <Badge class="text-[1.2rem] border-blue-400">Typescript</Badge>
-        <Badge class="text-[1.2rem]">Next.js</Badge>
-        <Badge class="text-[1.2rem] border-red-400">Nest.js</Badge>
-        <Badge class="text-[1.2rem] border-yellow-400">Firebase</Badge>
-        <Badge class="text-[1.2rem] border-green-400">Google Cloud</Badge>
-        <Badge class="text-[1.2rem] border-red-400">Git</Badge>
-        <Badge class="text-[1.2rem]">Github</Badge>
-        <Badge class="text-[1.2rem] border-blue-400">Docker</Badge>
-        <Badge class="text-[1.2rem] border-purple-400">Astro</Badge>
+    <div class="relative pt-[8rem] lg:pt-0 lg:mt-[7.5rem]">
+      <div class="grid gap-10">
+        <div class="leading-none text-[1.5rem] font-title font-medium">
+          I'm currently working with
+        </div>
+        <div class="flex flex-wrap gap-4">
+          {
+            currentTechs.map((tech) => (
+              <Badge
+                class="text-[1.2rem] lg:text-base currentTechs "
+                color={tech.color}
+              >
+                {tech.name}
+              </Badge>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="w-full rounded-[24px] mt-[8rem] p-10 grid gap-4">
+  <div class="w-full rounded-[24px] mt-[8rem] grid gap-4">
     <!-- <div
       class="flex flex-col justify-center items-center w-full h-full text-[1.5rem]"
     >
       <p>SCRATCH TO DISCOVER!</p>
     </div> -->
 
-    <p class="font-title text-[1.8rem] pb-2">Courses I've taken</p>
+    <p class="font-title text-[1.8rem] lg:text-[1.4rem] pb-2">
+      Courses I've taken
+    </p>
 
     <div
-      class="relative grid grid-cols-[1fr_1fr_auto] gap-20 text-[1.5rem] border-t border-border-white pt-12"
+      class="relative grid grid-cols-[1fr_1fr_auto] gap-20 text-[1.5rem] lg:text-[1.2rem] border-t border-border-white pt-12"
     >
       <div
         class="absolute left-0 top-0 w-full h-[1px] bg-[length:200%_100%] highlight-border bg-highlight-border"
@@ -105,11 +149,33 @@ const courses = [
             <p>{course.name}</p>
             <p class="text-opacity-white">{course.author}</p>
             <Link href={course.link}>
-              <Icon name="external-link" class="size-8 text-opacity-white" />
+              <Icon
+                name="external-link"
+                class="size-8 lg:size-6 text-opacity-white jump"
+              />
             </Link>
           </>
         ))
       }
     </div>
+  </div>
+</div>
+
+<div class="pt-[8rem]">
+  <p class="leading-none text-[1.5rem] font-title font-medium">
+    Technologies I've tried and want to try
+  </p>
+
+  <div class="flex flex-wrap gap-4 pt-8 lg:w-1/2">
+    {
+      triedTechs.map((tech) => (
+        <Badge
+          class="text-[1.2rem] lg:text-base currentTechs "
+          color={tech.color}
+        >
+          {tech.name}
+        </Badge>
+      ))
+    }
   </div>
 </Section>
