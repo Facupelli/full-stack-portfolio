@@ -3,16 +3,49 @@ import { Icon } from "astro-icon/components";
 import Section from "./section/section.astro";
 import SectionTitle from "./section/section-title.astro";
 import Image from "astro/components/Image.astro";
-import YoutubeLogo from "../images/social-logos/youtube-logo.png";
-import SpotifyLogo from "../images/social-logos/spotify-logo.png";
-import VscodeLogo from "../images/social-logos/vscode-logo.png";
-import FigmaLogo from "../images/social-logos/figma-logo.png";
-import PostmanLogo from "../images/social-logos/postman-logo.png";
-import ChromeLogo from "../images/social-logos/chrome-logo.png";
+import VscodeLogo from "../images/social-media/vscode.png";
+import SpotifyLogo from "../images/social-media/spotify.png";
+import YoutubeLogo from "../images/social-media/youtube.png";
+import TwitterLogo from "../images/social-media/twitter.png";
+import ChromeLogo from "../images/social-media/chrome.png";
+import ChatGptLogo from "../images/social-media/chat-gpt.png";
 import CopyToClipboardButton from "./buttons/copy-to-clipboard-button.astro";
 import Link from "./link.astro";
 import Card from "./card.astro";
 import PersonalPicture from "../images/personal-picture.jpg";
+
+const tools = [
+  {
+    name: "Spotify",
+    description: "Music is life",
+    image: SpotifyLogo,
+  },
+  {
+    name: "Twitter",
+    description: "Stay updated with the latest news",
+    image: TwitterLogo,
+  },
+  {
+    name: "Youtube",
+    description: "Learn things and keep up with the news",
+    image: YoutubeLogo,
+  },
+  {
+    name: "VSCode",
+    description: "Love coding",
+    image: VscodeLogo,
+  },
+  {
+    name: "Chat GPT",
+    description: "Make things faster",
+    image: ChatGptLogo,
+  },
+  {
+    name: "Chrome",
+    description: "Smooth browsing",
+    image: ChromeLogo,
+  },
+];
 
 const creators = [
   {
@@ -70,7 +103,8 @@ const creators = [
           </Link>
         </div>
         <a
-          href="/facundo-pellicer-full-stack-developer-resume.pdf"
+          href="/facundo-pellicer-resume.pdf"
+          name="Facundo Pellicer Full Sttack Developer Resume"
           download
           class="cursor-pointer flex items-end gap-4 lg:gap-2 text-[2.2rem] lg:text-[1rem] leading-none"
         >
@@ -85,86 +119,25 @@ const creators = [
         TOOLS I USE EVERYDAY
       </p>
 
-      <div class="grid gap-10 pt-16 lg:pt-12 text-[2rem] lg:text-[1rem]">
-        <div class="flex gap-6 items-center">
-          <div class="size-[75px] lg:size-[40px]">
-            <Image
-              src={SpotifyLogo}
-              alt="youtube logo"
-              width={75}
-              height={75}
-              class="object-contain w-full h-full"
-            />
-          </div> Music is life
-        </div>
-
-        <div class="flex gap-6 items-center">
-          <span
-            class="text-[4rem] lg:text-[2rem] block size-[75px] lg:size-[40px] px-6"
-            >X</span
-          > Stay updated with the latest news
-        </div>
-
-        <div class="flex gap-6 items-center">
-          <div class="size-[75px] lg:size-[40px]">
-            <Image
-              src={YoutubeLogo}
-              alt="youtube logo"
-              width={75}
-              height={75}
-              class="object-contain w-full h-full"
-            />
-          </div>
-          Learn things and keep up with the news
-        </div>
-
-        <div class="flex gap-6 items-center">
-          <div class="size-[75px] lg:size-[40px]">
-            <Image
-              src={VscodeLogo}
-              alt="youtube logo"
-              width={75}
-              height={75}
-              class="object-contain w-full h-full"
-            />
-          </div> I love coding
-        </div>
-
-        <div class="flex gap-6 items-center">
-          <div class="size-[75px] lg:size-[40px]">
-            <Image
-              src={FigmaLogo}
-              alt="youtube logo"
-              width={75}
-              height={75}
-              class="object-contain w-full h-full"
-            />
-          </div> For design
-        </div>
-
-        <div class="flex gap-6 items-center">
-          <div class="size-[75px] lg:size-[40px]">
-            <Image
-              src={PostmanLogo}
-              alt="youtube logo"
-              width={75}
-              height={75}
-              class="object-contain w-full h-full"
-            />
-          </div> Testing API requests
-        </div>
-
-        <div class="flex gap-6 items-center">
-          <div class="size-[75px] lg:size-[40px]">
-            <Image
-              src={ChromeLogo}
-              alt="youtube logo"
-              width={75}
-              height={75}
-              class="object-contain w-full h-full"
-            />
-          </div> or Arc for smooth browsing
-        </div>
+      <div
+        class="grid gap-14 lg:gap-10 pt-16 lg:pt-12 text-[1.8rem] lg:text-[1rem]"
+      >
+        {
+          tools.map((tool) => (
+            <div class="flex gap-6 items-center">
+              <div class="size-[60px] lg:size-[35px]">
+                <Image
+                  src={tool.image}
+                  alt="youtube logo"
+                  width={60}
+                  height={60}
+                  class="object-contain w-full h-full"
+                />
+              </div>{" "}
+              {tool.description}
+            </div>
+          ))
+        }
       </div>
     </Card>
 
@@ -181,7 +154,7 @@ const creators = [
             creators.map((creator) => (
               <div class="flex justify-between">
                 <div class="grid gap-1">
-                  <p class="text-[1.6rem] lg:text-base">{creator.name}</p>
+                  <p class="text-[1.8rem] lg:text-base">{creator.name}</p>
                   <p class="text-[1.2rem] lg:text-[.8rem] text-opacity-white">
                     {creator.platform.join(" - ")}
                   </p>
