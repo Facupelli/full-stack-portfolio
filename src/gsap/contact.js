@@ -7,6 +7,9 @@ export function animateContact() {
   const revealTexts = document.querySelectorAll(".reveal-text-fast");
   const revealTextContainer = document.querySelector(".reveal-text-container");
 
+  const contactSection = document.querySelector(".contact-section");
+  const contactCircle = document.querySelector(".contact-circle");
+
   const timeline = gsap.timeline({
     scrollTrigger: {
       trigger: revealTextContainer,
@@ -38,5 +41,16 @@ export function animateContact() {
       },
       "-=0.2"
     );
+  });
+
+  gsap.to(contactCircle, {
+    opacity: 0.5,
+    scrollTrigger: {
+      trigger: contactSection,
+      start: `top center-=100px`,
+      end: "center center",
+      scrub: true,
+      markers: true,
+    },
   });
 }

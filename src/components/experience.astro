@@ -5,6 +5,7 @@ import SectionTitle from "./section/section-title.astro";
 import Link from "./link.astro";
 import { Icon } from "astro-icon/components";
 import Card from "./card.astro";
+import BluredCircle from "./blured-circle.astro";
 
 const experiences = [
   {
@@ -80,9 +81,9 @@ const triedTechs = [
 ];
 ---
 
-<Section class="pt-[28rem]">
+<Section class="pt-[28rem] relative">
   <SectionTitle>EXPERIENCE</SectionTitle>
-
+  
   <div class="flex flex-col lg:grid lg:grid-cols-[60%_40%] lg:gap-x-10">
     <Card class="mt-[5rem]">
         <div class="grid grid-cols-2 gap-y-24">
@@ -125,12 +126,6 @@ const triedTechs = [
   </div>
 
   <div class="w-full rounded-[24px] mt-[10rem] lg:mt-[8rem] grid gap-4">
-    <!-- <div
-      class="flex flex-col justify-center items-center w-full h-full text-[1.5rem]"
-    >
-      <p>SCRATCH TO DISCOVER!</p>
-    </div> -->
-
     <p class="font-title text-[1.8rem] lg:text-[1.4rem] pb-2">
       Courses I've taken
     </p>
@@ -158,23 +153,23 @@ const triedTechs = [
       }
     </div>
   </div>
-  </div>
 
-<div class="pt-[10rem] lg:pt-[8rem]">
-  <p class="leading-none text-[1.5rem] font-title font-medium">
-    Technologies I've tried and want to try
-  </p>
+  <div class="pt-[10rem] lg:pt-[8rem]">
+    <p class="leading-none text-[1.5rem] font-title font-medium">
+      Technologies I've tried and want to try
+    </p>
 
-  <div class="flex flex-wrap gap-4 pt-8 lg:w-1/2">
-    {
-      triedTechs.map((tech) => (
-        <Badge
-          class="text-[1.2rem] lg:text-base currentTechs "
-          color={tech.color}
-        >
-          {tech.name}
-        </Badge>
-      ))
-    }
+    <div class="flex flex-wrap gap-4 pt-8 lg:w-1/2">
+      {
+        triedTechs.map((tech) => (
+          <Badge
+            class="text-[1.2rem] lg:text-base currentTechs "
+            color={tech.color}
+          >
+            {tech.name}
+          </Badge>
+        ))
+      }
+    </div>
   </div>
 </Section>

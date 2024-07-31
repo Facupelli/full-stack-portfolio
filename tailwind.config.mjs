@@ -17,7 +17,7 @@ export default {
       },
       backgroundImage: {
         "highlight-border":
-          "linear-gradient(90deg, rgb(15, 15, 15) 0%, rgb(15, 15, 15) 48%, rgba(255, 255, 255, 0.8) 50%, rgb(15, 15, 15) 52%, rgb(15, 15, 15) 100%)",
+          "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 48%, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0) 100%)",
       },
       animation: {
         "color-change": "colorChange 1.5s ease-in-out infinite",

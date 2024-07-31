@@ -2,16 +2,18 @@
 import "../styles/global.css";
 import "@fontsource/open-sans";
 import "@fontsource/inter";
+import BluredCircle from "../components/blured-circle.astro";
 // import SeoHead from '../components/SeoHead.astro';
 ---
 
 <html lang="es">
   <!-- <SeoHead /> -->
 
-  <body class="bg-[rgb(15,15,15)] text-white">
+  <body class="bg-[rgb(15,15,15)] text-white relative">
     <div class="absolute w-full h-full top-0 left-0 overflow-hidden">
       <div class="noise"></div>
     </div>
+
     <slot />
 
     <script>
