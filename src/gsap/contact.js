@@ -50,7 +50,7 @@ export function animateContact() {
       start: `top center-=100px`,
       end: "center center",
       scrub: true,
-      markers: true,
+      // markers: true,
     },
   });
 }
