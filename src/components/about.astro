@@ -14,6 +14,34 @@ import Link from "./link.astro";
 import Card from "./card.astro";
 import PersonalPicture from "../images/linkedin-picture.jpg";
 
+const courses = [
+  {
+    name: "Total TypeScript Essentials",
+    author: "Matt Pocock",
+    link: "https://www.totaltypescript.com/books/total-typescript-essentials/kickstart-your-typescript-setup",
+  },
+  {
+    name: "Just Javascript",
+    author: "Dan Abramov",
+    link: "https://justjavascript.com/",
+  },
+  {
+    name: "React Performance",
+    author: "Steve Kinney",
+    link: "https://frontendmasters.com/courses/react-performance/introduction/",
+  },
+  {
+    name: "Design Patterns",
+    author: "Hector de Leon",
+    link: "https://www.udemy.com/course/patrones-de-diseno-en-javascript-y-typescript",
+  },
+  {
+    name: "The Last Algorithms Course You'll Need",
+    author: "The Primeagean",
+    link: "https://frontendmasters.com/courses/algorithms/introduction/",
+  },
+];
+
 const tools = [
   {
     name: "Spotify",
@@ -79,7 +107,7 @@ const creators = [
         <p>
           Nice to meet you! I'm Facundo, a <span class="text-[rgb(109,167,255)]"
             >Full Stack Developer</span
-          > with 1.5 year of experience at startups. I'm passionate about the whole
+          > with +2 years of experience at startups. I'm passionate about the whole
           process of making software.
         </p>
         <p>
@@ -181,6 +209,35 @@ const creators = [
           />
         </div>
       </Card>
+    </div>
+  </div>
+
+  <div class="w-full rounded-[24px] mt-[10rem] lg:mt-[8rem] grid gap-4">
+    <p class="font-title text-[1.8rem] lg:text-[1.4rem] pb-2">
+      Courses I've taken
+    </p>
+
+    <div
+      class="relative grid grid-cols-[1fr_1fr_auto] gap-20 text-[1.5rem] lg:text-[1.2rem] border-t border-border-white pt-12"
+    >
+      <div
+        class="absolute left-0 top-0 w-full h-[1px] bg-[length:200%_100%] highlight-border bg-highlight-border"
+      >
+      </div>
+      {
+        courses.map((course) => (
+          <>
+            <p>{course.name}</p>
+            <p class="text-opacity-white">{course.author}</p>
+            <Link href={course.link}>
+              <Icon
+                name="external-link"
+                class="size-8 lg:size-6 text-opacity-white jump"
+              />
+            </Link>
+          </>
+        ))
+      }
     </div>
   </div>
 </Section>
