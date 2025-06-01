@@ -2,10 +2,7 @@
 import Badge from "./badge.astro";
 import Section from "./section/section.astro";
 import SectionTitle from "./section/section-title.astro";
-import Link from "./link.astro";
-import { Icon } from "astro-icon/components";
 import Card from "./card.astro";
-import BluredCircle from "./blured-circle.astro";
 
 const experiences = [
   {
@@ -30,8 +27,8 @@ const currentTechs = [
   { name: "Nest.js", color: "border-red-400" },
   { name: "Typescript", color: "border-blue-400" },
   { name: "Google Cloud", color: "border-green-400" },
-  { name: "Firebase", color: "border-yellow-400" },
   { name: "SQL", color: "border-indigo-400" },
+  { name: "Firebase", color: "border-yellow-400" },
   { name: "Git", color: "border-red-400" },
   { name: "Github", color: "" },
   { name: "Docker", color: "border-blue-400" },
@@ -64,7 +61,7 @@ const triedTechs = [
     <!-- Experience Timeline -->
     <div class="space-y-8">
       {
-        experiences.map((experience, index) => (
+        experiences.map((experience) => (
           <div class="group relative">
             <div class="absolute left-[1px] top-5 w-px h-full bg-gradient-to-b from-white/10 to-transparent" />
 
@@ -72,10 +69,10 @@ const triedTechs = [
 
             <div class="pl-8 pb-8">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                <h3 class="text-xl lg:text-2xl font-medium text-white group-hover:text-white/90 transition-colors duration-300">
+                <h3 class="text-2xl font-medium text-white group-hover:text-white/90 transition-colors duration-300">
                   {experience.title}
                 </h3>
-                <span class="text-sm text-white/50 font-mono mt-1 sm:mt-0">
+                <span class="text-base text-white/50 font-mono mt-1 sm:mt-0">
                   {experience.time}
                 </span>
               </div>
