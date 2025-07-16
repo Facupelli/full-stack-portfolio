@@ -5,6 +5,7 @@ import SectionTitle from "./section/section-title.astro";
 import Image from "astro/components/Image.astro";
 import CorralaStudio from "../images/corrala-studio.png";
 import BoletinOficial from "../images/boletin-oficial.png";
+import SocialMoviesClub from "../images/social-movies-club-feed.webp";
 
 const projects = [
   {
@@ -27,6 +28,17 @@ const projects = [
     technologies: ["Next.js", "PostgreSQL", "Cloudflare R2 - KV", "Supabase"],
     motivation:
       "A filmmaker friend and I noticed a common gap between filmmakers and editors, the final product is always better when each person focuses on what they truly enjoy. This platform is our solution to bridge that gap, so both sides can do their best work and stay happy doing what they love.",
+  },
+  {
+    id: 3,
+    title: "Social Movies Club",
+    description:
+      "This is a social platform for movie enthusiasts to rate movies, share their opinions, and discover new films through their friends' activity. Whether you're looking to keep track of the movies you've watched or explore recommendations from your network, this app has you covered.",
+    image: SocialMoviesClub,
+    websiteUrl: "https://social-movies-club.vercel.app/",
+    technologies: ["Next.js", "PostgreSQL", "Redis", "NestJS"],
+    motivations:
+      "This app is my way of learning how to build a small-scale social network while scratching a real itch: finding actually good movies to watch. The best recommendations I ever get come from friends whose taste I trust—so I’m wiring that experience into code. Expect rough edges, frequent tweaks, and a lot of fun experiments along the way!",
   },
 ];
 ---
