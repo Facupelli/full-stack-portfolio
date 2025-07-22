@@ -6,6 +6,7 @@ import Image from "astro/components/Image.astro";
 import CorralaStudio from "../images/corrala-studio.png";
 import BoletinOficial from "../images/boletin-oficial.png";
 import SocialMoviesClub from "../images/social-movies-club-feed.webp";
+import ExpensesBot from "../images/expenses-bot.png";
 
 const projects = [
   {
@@ -20,6 +21,16 @@ const projects = [
   },
   {
     id: 2,
+    title: "Dividir Gastos Bot",
+    description:
+      "A conversational bot that uses AI to manage shared expenses in a group. It understands natural language messages and keeps track of who paid what. The bot can fairly split costs between group members and adjust balances accordingly.",
+    image: ExpensesBot,
+    technologies: ["Typescript", "Express", "OpenAI", "SQLite"],
+    motivation:
+      "I wanted to build something where AI actually made sense — not just as a gimmick. Splitting expenses in a group is a common real-life problem, and using natural language to handle it feels intuitive. We're all used to chatting, so why not let the AI understand those chats and help with the division?",
+  },
+  {
+    id: 3,
     title: "Corrala Studio",
     description:
       "A comprehensive platform connecting filmmakers with video editors through dedicated project managers. Streamlines the entire video workflow by managing briefs, revisions, and final delivery to ensure smooth collaboration between creative teams.",
@@ -30,7 +41,7 @@ const projects = [
       "A filmmaker friend and I noticed a common gap between filmmakers and editors, the final product is always better when each person focuses on what they truly enjoy. This platform is our solution to bridge that gap, so both sides can do their best work and stay happy doing what they love.",
   },
   {
-    id: 3,
+    id: 4,
     title: "Social Movies Club",
     description:
       "This is a social platform for movie enthusiasts to rate movies, share their opinions, and discover new films through their friends' activity. Whether you're looking to keep track of the movies you've watched or explore recommendations from your network, this app has you covered.",
@@ -65,13 +76,13 @@ const projects = [
             )}
           </div>
 
-          <div class="w-full max-h-[500px]">
+          <div class="w-full aspect-[8/5] overflow-hidden rounded-md">
             <Image
               src={project.image}
               alt="Boletin Oficial side project"
               width="800"
-              height="800"
-              class="w-full h-full object-cover origin-center rounded-md"
+              height="500"
+              class="w-full h-full object-cover"
             />
           </div>
 
