@@ -7,6 +7,7 @@ import CorralaStudio from "../images/corrala-studio.png";
 import BoletinOficial from "../images/boletin-oficial.png";
 import SocialMoviesClub from "../images/social-movies-club-feed.webp";
 import ExpensesBot from "../images/expenses-bot.png";
+import ExpensesBotQR from "../images/expenses-bot-qr.jpeg";
 
 const projects = [
   {
@@ -14,7 +15,7 @@ const projects = [
     title: "Boletin Oficial",
     description:
       "A web app that automatically downloads Argentina's Boletin Oficial daily, uses AI to generate easy-to-read summaries, and highlights relevant news categorized for citizens. Features an AI assistant that can answer questions about the full document in real time.",
-    image: BoletinOficial,
+    images: [BoletinOficial],
     technologies: ["Astro", "Python", "FastAPI", "Google IA", "SQLite"],
     motivation:
       "I am not a fan of watching the news, but I believe it's important to stay informed about what's happening in your country. With so many rapid changes in Argentina's government, I built this tool to stay up to date without the noise or bias of traditional media.",
@@ -24,7 +25,7 @@ const projects = [
     title: "Dividir Gastos Bot",
     description:
       "A conversational bot that uses AI to manage shared expenses in a group. It understands natural language messages and keeps track of who paid what. The bot can fairly split costs between group members and adjust balances accordingly.",
-    image: ExpensesBot,
+    images: [ExpensesBotQR, ExpensesBot],
     technologies: ["Typescript", "Express", "OpenAI", "SQLite"],
     motivation:
       "I wanted to build something where AI actually made sense — not just as a gimmick. Splitting expenses in a group is a common real-life problem, and using natural language to handle it feels intuitive. We're all used to chatting, so why not let the AI understand those chats and help with the division?",
@@ -34,7 +35,7 @@ const projects = [
     title: "Corrala Studio",
     description:
       "A comprehensive platform connecting filmmakers with video editors through dedicated project managers. Streamlines the entire video workflow by managing briefs, revisions, and final delivery to ensure smooth collaboration between creative teams.",
-    image: CorralaStudio,
+    images: [CorralaStudio],
     websiteUrl: "https://corralastudio.com",
     technologies: ["Next.js", "PostgreSQL", "Cloudflare R2 - KV", "Supabase"],
     motivation:
@@ -45,7 +46,7 @@ const projects = [
     title: "Social Movies Club",
     description:
       "This is a social platform for movie enthusiasts to rate movies, share their opinions, and discover new films through their friends' activity. Whether you're looking to keep track of the movies you've watched or explore recommendations from your network, this app has you covered.",
-    image: SocialMoviesClub,
+    images: [SocialMoviesClub],
     websiteUrl: "https://social-movies-club.vercel.app/",
     technologies: ["Next.js", "PostgreSQL", "Redis", "NestJS"],
     motivations:
@@ -76,14 +77,16 @@ const projects = [
             )}
           </div>
 
-          <div class="w-full aspect-[8/5] overflow-hidden rounded-md">
-            <Image
-              src={project.image}
-              alt="Boletin Oficial side project"
-              width="800"
-              height="500"
-              class="w-full h-full object-cover"
-            />
+          <div class="w-full aspect-[8/5] flex overflow-hidden rounded-md">
+            {project.images.map((image) => (
+              <Image
+                src={image}
+                alt="Boletin Oficial side project"
+                width="800"
+                height="500"
+                class="w-full h-full object-cover"
+              />
+            ))}
           </div>
 
           {/* Content Section */}
